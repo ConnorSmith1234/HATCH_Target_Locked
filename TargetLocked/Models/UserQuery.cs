@@ -37,4 +37,10 @@ namespace TargetLocked.Models
             };
         }
     }
+
+    public class GeneListResponse
+    {
+        public string chromosome { get; set; }
+        public string gene_name { get; set; }
+    }
 }
