@@ -42,7 +42,9 @@ $(function () {
                 data: data,
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: function () {
+                success: function (result) {
+                    list.option("dataSource", result);
+                    list.option("visible", true);
                     console.log("success");
                 },
                 error: function () {
@@ -52,6 +54,14 @@ $(function () {
         }
     });
     var list = $("#responseList").dxList({
-
+        dataSource: null,
+        visible: false,
+        height: "100%",
+        width: "100%",
+        itemTemplate: function (data, index) {
+            console.log(data);
+            console.log(index);
+            return $("<div>").html("this is placeholder");
+        }
     }).dxList("instance");
 });

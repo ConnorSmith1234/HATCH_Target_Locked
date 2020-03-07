@@ -35,7 +35,6 @@ C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\bin\Debug\netco
 C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\TargetLocked.csprojAssemblyReference.cache
 C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\staticwebassets\TargetLocked.StaticWebAssets.Manifest.cache
 C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\staticwebassets\TargetLocked.StaticWebAssets.xml
-C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\TargetLocked.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\TargetLocked.RazorAssemblyInfo.cache
 C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\TargetLocked.RazorAssemblyInfo.cs
 C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\TargetLocked.AssemblyInfoInputs.cache
