@@ -23,6 +23,12 @@ namespace TargetLocked.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Search([FromBody]UserQuery query)
+        {
+            return Json(QueryResponse.sampleResponse());
+        }
+
         public IActionResult Privacy()
         {
             return View();
