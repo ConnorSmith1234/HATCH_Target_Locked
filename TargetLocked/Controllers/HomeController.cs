@@ -4,22 +4,23 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using TargetLocked.Models;
 
 namespace TargetLocked.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
         public IActionResult Index()
         {
             return View();
-        }
-
-        [HttpPost]
-        public IActionResult Search([FromBody]string searchQuery)
-        {
-            // call python script with search query. Get model back, return model as Json(modelObject);
-            return Ok(200);
         }
 
         public IActionResult Privacy()
