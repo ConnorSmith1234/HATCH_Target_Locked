@@ -162,7 +162,7 @@ def accuracy_score_direct(target_list, given_list):
     for item in given_list:
         given_disease_list += [text.lower() for text in item.replace(',', '').split(' ') if text not in STOPWORDS]
     gdl_set = set(given_list)
-    return float(len(dl_set & gdl_set)) / float(len(dl_set))
+    return float(len(dl_set & gdl_set)) * float(len(dl_set & gdl_set)) / float(len(dl_set) + len(gdl_set - dl_set))
 
 
 def hgmd_doc_score(gene, dis_score_list):
@@ -171,5 +171,5 @@ def hgmd_doc_score(gene, dis_score_list):
         doc_json (TYPE): Description
     """
     gene_disease_list = get_diseases_for_gene(gene)
-    return accuracy_score_onehot(gene_disease_list, dis_score_list)
+    return accuracy_score_direct(gene_disease_list, dis_score_list)
 
