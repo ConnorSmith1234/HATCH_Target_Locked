@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using TargetLocked.DB;
 using TargetLocked.Models;
 
 namespace TargetLocked.Controllers
@@ -12,6 +13,7 @@ namespace TargetLocked.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly DatabaseContext _databaseContext = new DatabaseContext();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -21,6 +23,13 @@ namespace TargetLocked.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Autofill([FromBody]string queryPortion)
+        {
+            List<Gene> query_response = _databaseContext.Genes.Where(x => x.gene_name.Contains(queryPortion.ToUpper())).ToList();
+            return Json(query_response);
         }
 
         [HttpPost]

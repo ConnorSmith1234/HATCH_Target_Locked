@@ -38,9 +38,10 @@ namespace TargetLocked.Models
         }
     }
 
-    public class GeneListResponse
+    public class Gene
     {
         public string chromosome { get; set; }
         public string gene_name { get; set; }
+        public int id { get; set; }
     }
 }
