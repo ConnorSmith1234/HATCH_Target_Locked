@@ -60,8 +60,25 @@ $(function () {
                 synopsis = data.abstract;
             }
             let summary = $("<div>").addClass("abstract").html(synopsis);
+            let tags = $("<div>").addClass("d-flex").addClass("mt-2");
+            tags.append($("<div>", {"style": "padding-top: 2px;"}).html("Tags: "))
+            let diseaseTags = [];
+            for (let i = 0; i < data.diseases.length; i++) {
+                diseaseTags.push(data.diseases[i].disease);
+            }
+            let geneTags = data.genes ? data.genes : [];
+            let animals = data.species ? data.species : [];
+            diseaseTags.forEach(x => tags.append($("<div>").html(x).addClass("diseaseTag")));
+            geneTags.forEach(x => tags.append($("<div>").html(x).addClass("geneTag")));
+            animals.forEach(x => tags.append($("<div>").html(x).addClass("animalTag")));
+            let i = 0;
+            tags.children().each(function () {
+                if (++i > 10) {
+                    $(this).remove();
+                }
+            })
             console.log(data);
-            return $("<div>").addClass("container-fluid").append(titleDiv).append(authorsList).append(summary);
+            return $("<div>").addClass("container-fluid").append(titleDiv).append(authorsList).append(summary).append(tags);
         }
     }).dxList("instance");
 });
@@ -90,6 +107,7 @@ function sendSearch() {
 function displaySidebar() {
     if (firstSearchFlag) {
         firstSearchFlag = false;
+        searchBox.option("disabled", true);
         let dateList = searchData.map(a => a.date_seconds);
         earliestDate = Math.min(...dateList);
         latestDate = Math.max(...dateList);
@@ -159,6 +177,32 @@ function displaySidebar() {
         $("#speciesFilter").dxList({
             items: speciesCount,
             height: speciesHeight,
+            itemTemplate: function (data) {
+                return $("<div>").html(data.Name + " (" + data.Count + ")");
+            },
+            onSelectionChanged: function () {
+                handleFilterChange();
+            },
+            selectionMode: "all",
+            showSelectionControls: true
+        });
+        let geneList = searchData.map(a => a.genes).join().split(",");
+        let geneCount = [];
+        geneList.forEach(function (i) {
+            if (i.length == 0) {
+                return true;
+            }
+            if (geneCount.some(x => x.Name == i)) {
+                geneCount.filter(x => x.Name == i)[0].Count++;
+            }
+            else {
+                geneCount.push({ "Name": i, "Count": 1 });
+            }
+        });
+        let geneHeight = geneCount.length > 3 ? 185 : null;
+        $("#geneFilter").dxList({
+            items: geneCount,
+            height: geneHeight,
             itemTemplate: function (data) {
                 return $("<div>").html(data.Name + " (" + data.Count + ")");
             },
@@ -249,12 +293,21 @@ function handleFilterChange() {
     let authorsSelection = $("#authorsFilter").dxList("instance").option("selectedItems").map(x => x.Name);
     let speciesSelection = $("#speciesFilter").dxList("instance").option("selectedItems").map(x => x.Name);
     let diseaseSelection = $("#diseaseFilter").dxList("instance").option("selectedItems").map(x => x.Name);
+    let geneSelection = $("#geneFilter").dxList("instance").option("selectedItems").map(x => x.Name);
     let beforeSelection = new Date(new Date($("#beforeDate").dxDateBox("instance").option().value).toDateString());
     let afterSelection = new Date(new Date($("#afterDate").dxDateBox("instance").option().value).toDateString());
     beforeSelection = new Date(beforeSelection.getTime() + (60 * 60 * 24 * 1000));
     let dateDropdownSelection = $("#dateDropdownButton").dxSelectBox("instance").option().value;
     let filteredData = speciesSelection.length != 0 ? searchData.filter(x => x.species.some(y => speciesSelection.includes(y))) : searchData;
-    filteredData = diseaseSelection.length != 0 ? filteredData.filter(x => x.diseases.some(y => diseaseSelection.includes(y))) : filteredData;
+    filteredData = diseaseSelection.length != 0 ? filteredData.filter(function (x) {
+        let masterDiseaseList = [];
+        x.diseases.forEach(function (i) {
+            masterDiseaseList.push(i.disease);
+        });
+        let union = masterDiseaseList.filter(value => diseaseSelection.includes(value));
+        return union.length > 0;
+    }) : filteredData;
+    filteredData = geneSelection.length != 0 ? filteredData.filter(x => x.genes.some(y => geneSelection.includes(y))) : filteredData;
     filteredData = authorsSelection.length != 0 ? filteredData.filter(function (x) {
         if (!x.authors) {
             return false;

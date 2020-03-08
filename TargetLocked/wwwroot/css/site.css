@@ -141,3 +141,27 @@ body {
     text-align: right;
     margin-left: auto;
 }
+
+.diseaseTag {
+    border: 1px solid green;
+    border-radius: 8px;
+    color: green;
+    padding: 2px;
+    margin: 0 4px;
+}
+
+.geneTag {
+    border: 1px solid blue;
+    border-radius: 8px;
+    color: blue;
+    padding: 2px;
+    margin: 0 4px;
+}
+
+.animalTag {
+    border: 1px solid red;
+    border-radius: 8px;
+    color: red;
+    padding: 2px;
+    margin: 0 4px;
+}
