@@ -2,55 +2,166 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/* My css */
+
+.titleLink {
+    font-size: 22px;
+    color: blue;
+    margin-right: 15px;
+    white-space: normal;
+}
+
+    .titleLink:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+.authors {
+    color: #006621
+}
+
+.abstract {
+    white-space: normal;
+}
+
+.citations {
+    color: darkblue;
+}
+
+#filterSidebar {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 250px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 35px; /* Stay at the top */
+    left: -250px;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+    #filterSidebar.active {
+        left: 10px;
+        transition: left 0.5s;
+    }
+
+.searchContainer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.collapseIcon {
+    font-size: 20px;
+}
+
+.collapseIcon:hover {
+    cursor: pointer;
+}
+
+.collapsed {
+    height: 0;
+    transition: 0.5s height;
+}
+
+.dx-list-item {
+    cursor: default;
+}
+
+.api {
+    text-align: right;
+    margin-left: auto;
+}
+
+.diseaseTag {
+    border: 1px solid green;
+    border-radius: 8px;
+    color: green;
+    padding: 2px;
+    margin: 0 4px;
+}
+
+.geneTag {
+    border: 1px solid blue;
+    border-radius: 8px;
+    color: blue;
+    padding: 2px;
+    margin: 0 4px;
+}
+
+.animalTag {
+    border: 1px solid red;
+    border-radius: 8px;
+    color: red;
+    padding: 2px;
+    margin: 0 4px;
 }

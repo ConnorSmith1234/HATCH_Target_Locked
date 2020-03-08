@@ -1,0 +1,511 @@
+[
+  {
+    "title": "\nCommon genetic risk variants identified in the SPARK cohort implicate DDHD2 as a novel autism risk gene ",
+    "authors": [
+      "Nana Matoba",
+      " Dan Liang",
+      " Huaigu Sun",
+      " Nil Ayg\u00fcn",
+      " Jessica C McAfee",
+      " Jessica E Davis",
+      " Laura M Raffield",
+      " Huijun Qian",
+      " Joseph Piven",
+      " Yun Li",
+      " Sriram Kosuri",
+      " Hyejung Won",
+      " Jason L Stein"
+    ],
+    "abstract": "Background: Autism spectrum disorder (ASD) is a highly heritable neurodevelopmental disorder. Large genetically informative cohorts of individuals with ASD have led to the identification of three common genome-wide significant (GWS) risk loci to date. However, many more common genetic variants are expected to contribute to ASD risk given the high heritability. Here, we performed a genome-wide association study (GWAS) using the Simons Foundation Powering Autism Research for Knowledge (SPARK) dataset to identify additional common genetic risk factors and molecular mechanisms underlying risk for ASD. Methods: We performed an association study on 6,222 case-pseudocontrol pairs from SPARK and meta-analyzed with a previous GWAS. We integrated gene regulatory annotations to map non-coding risk variants to their regulated genes. Further, we performed a massively parallel reporter assay (MPRA) to identify causal variant(s) within a novel risk locus.Results: We identified one novel GWS locus from the SPARK GWAS. The meta-analysis identified four significant loci, including an additional novel locus. We observed significant enrichment of ASD heritability within regulatory regions of the developing cortex, indicating that disruption of gene regulation during neurodevelopment is critical for ASD risk. The MPRA identified one variant at the novel locus with strong impacts on gene regulation (rs7001340), and expression quantitative trait loci data demonstrated an association between the risk allele and decreased expression of DDHD2 (DDHD domain containing 2) in both adult and pre-natal brains. Conclusions: By integrating genetic association data with multi-omic gene regulatory annotations and experimental validation, we fine-mapped a causal risk variant and demonstrated that DDHD2 is a novel gene associated with ASD risk.",
+    "url": "https://doi.org/10.1101/2020.01.13.20017319 ",
+    "api": "MedArchive",
+    "date": "2020-01-16",
+    "date_seconds": 1579132800.0,
+    "species": [
+    ],
+    "diseases": [
+      {
+        "score": 0.995124,
+        "disease": "autism and pdd"
+      }
+    ],
+    "genes": [
+      "DDHD2",
+      "WAS",
+      "AR"
+    ],
+    "mutation_type": [
+    ]
+  },
+  {
+    "title": "\nA Genome-Wide Association Study of the Frailty Index Highlights Synaptic Pathways in Aging ",
+    "authors": [
+      "Janice L Atkins",
+      " Juulia Jylhava",
+      " Nancy Pedersen",
+      " Patrik Magnusson",
+      " Yi Lu",
+      " Yunzang Wang",
+      " Sara Hagg",
+      " David Melzer",
+      " Dylan Williams",
+      " Luke C Pilling"
+    ],
+    "abstract": "Frailty is a common geriatric syndrome, strongly associated with disability, mortality and hospitalisation. The mechanisms underlying frailty are multifactorial and not well understood, but a genetic basis has been suggested with heritability estimates between 19 and 45%. Understanding the genetic determinants and biological mechanisms underpinning frailty may help to delay or even prevent frailty. We performed a genome-wide association study (GWAS) of a frailty index (FI) in European descent participants from UK Biobank (n=164,610, aged 60-70 years). FI calculation was based on 49 self-reported items on symptoms, disabilities and diagnosed diseases. We identified 26 independent genetic signals at 24 loci associated with the FI (p<5*10-8). Many of these loci have previously been associated with traits such as body mass index, cardiovascular disease, smoking, HLA proteins, depression and neuroticism; however, three appear to be novel. The estimated single nucleotide polymorphism (SNP) heritability of the FI was 14% (0.14, SE 0.006). A genetic risk score for the FI, derived solely from the UK Biobank data, was significantly associated with FI in the Swedish TwinGene study (n=10,616, beta: 0.11, 95% CI: 0.02-0.20, p=0.015). In pathway analysis, genes associated with synapse function were significantly enriched (p<3*10-6). We also used Mendelian randomization to identify modifiable traits and exposures that may affect the risk of frailty, with a higher educational attainment genetic risk score being associated with a lower risk of frailty. Risk of frailty is influenced by many genetic factors, including well-known disease risk factors and mental health, with particular emphasis on synapse maintenance pathways.",
+    "url": "https://doi.org/10.1101/19007559 ",
+    "api": "MedArchive",
+    "date": "2019-09-25",
+    "date_seconds": 1569369600.0,
+    "species": [
+    ],
+    "diseases": [
+      {
+        "score": 0.764842,
+        "disease": "heart disease"
+      },
+      {
+        "score": 0.683515,
+        "disease": "diabetes"
+      }
+    ],
+    "genes": [
+      "WAS"
+    ],
+    "mutation_type": [
+    ]
+  },
+  {
+    "title": "Gene regulatory architectures dissect the evolutionary dynamics of regulatory elements in humans and non-human primates",
+    "authors": [
+      "Raquel Garc\u00eda-P\u00e9rez",
+      "Paula Esteller-Cucala",
+      "Gl\u00f2ria Mas",
+      "Irene Lob\u00f3n",
+      "Valerio Di Carlo",
+      "Meritxell Riera",
+      "Martin Kuhlwilm",
+      "Arcadi Navarro",
+      "Antoine Blancher",
+      "Luciano Di Croce",
+      "Jos\u00e9 Luis G\u00f3mez-Skarmeta",
+      "David Juan",
+      "Tom\u00e0s Marqu\u00e8s-Bonet"
+    ],
+    "abstract": "Genes undergoing substantial evolutionary shifts in their expression profiles are often modulated by critical epigenomic changes that are among the primary targets of selection in evolution. Here, we investigate the evolution of epigenetic regulatory activities and their interplay with gene expression in human and non-human primate lineages. We extensively profiled a new panel of human and non-human primate lymphoblastoid cell lines using a variety of NGS techniques and integrated genome-wide chromatin contact maps to define gene regulatory architectures. We observe that epigenetic and sequence conservation are coupled in regulatory elements and reflect the impact of their activity on gene expression. The addition or removal of strong and poised promoters and intragenic enhancers is frequent in gene expression changes during recent primate evolution. In contrast, novel human-specific weak intragenic enhancers, dormant in our cell lines, have emerged in genes showing signals of recent adaptive selection, suggesting that they echo important regulatory innovations in other cell types. Among the genes targeted by these regulatory innovations, we find key candidate drivers of recently evolved human traits, such as FOXP2 or ROBO1 for speech and language acquisition, and PALMD for neocortex expansion, thus highlighting the importance of regulatory changes in human evolution.",
+    "url": "https://www.biorxiv.org/content/10.1101/2019.12.18.872531v2",
+    "api": "BioArchive",
+    "date": "2019-12-19",
+    "date_seconds": 1576713600.0,
+    "species": [
+      "primates"
+    ],
+    "diseases": [
+      {
+        "score": 0.779879,
+        "disease": "cancer"
+      },
+      {
+        "score": 0.542708,
+        "disease": "autism and pdd"
+      }
+    ],
+    "genes": [
+      "PALMD",
+      "ROBO1",
+      "FOXP2"
+    ],
+    "mutation_type": [
+    ]
+  },
+  {
+    "title": "A genome-wide association study finds genetic variants associated with neck or shoulder pain in UK Biobank",
+    "authors": [
+      "Weihua Meng",
+      "Brian W Chan",
+      "Cameron Harris",
+      "Maxim B. Freidin",
+      "Harry L Hebert",
+      "Mark J. Adams",
+      "Caroline Hayward",
+      "Hua Zheng",
+      "Xianwei Zhang",
+      "Lesley A Colvin",
+      "Tim G Hales",
+      "Colin N.A. Palmer",
+      "Frances MK Williams",
+      "Andrew M. McIntosh",
+      "Blair H Smith"
+    ],
+    "abstract": "Background: Common types of musculoskeletal conditions include pain in the neck and shoulder areas. This study seeks to identify the genetic variants associated with neck or shoulder pain based on a genome-wide association approach using 203,309 subjects from the UK Biobank cohort and look for replication evidence from the Generation Scotland: Scottish Family Health Study (GS:SFHS) and TwinsUK. Methods: Cases in the UK Biobank were determined by a question which asked the participants if they had experienced pain in the neck or shoulder in the previous month influencing daily activities. Controls were the UK Biobank participants who reported no pain anywhere in the last month. A genome-wide association study was performed adjusting for age, sex, BMI and 9 population principal components. Significant and independent genetic variants were then sent to GS:SFHS and TwinsUK for replication. Results: We identified 3 genetic loci that were associated with neck or shoulder pain in the UK Biobank samples. The most significant locus was in an intergenic region in chromosome 17, rs12453010, having P = 1.66 x 10-11. The second most significant locus was located in the FOXP2 gene in chromosome 7 with P = 2.38 x 10-10 for rs34291892. The third locus was located in the LINC01572 gene in chromosome 16 with P = 4.50 x 10-8 for rs62053992. In the replication stage, among 4 significant and independent genetic variants, rs2049604 in the FOXP2 gene and rs62053992 in the LINC01572 gene were weakly replicated in GS:SFHS (P = 0.024 and P = 0.020, respectively). None of the single nucleotide polymorphisms (SNPs) were replicated in the TwinsUK cohort (P > 0.05). Conclusions: We have identified 3 loci associated with neck or shoulder pain in the UK Biobank cohort, two of which were weakly supported in a replication cohort. Further evidence is needed to confirm their roles in neck or shoulder pain. Key words: neck pain, shoulder pain, GWAS, genetics, FOXP2, UK Biobank",
+    "url": "https://www.biorxiv.org/content/10.1101/2020.01.20.913228v1",
+    "api": "BioArchive",
+    "date": "2020-01-21",
+    "date_seconds": 1579564800.0,
+    "species": [
+    ],
+    "diseases": [
+      {
+        "score": 0.741435,
+        "disease": "chronic pain"
+      },
+      {
+        "score": 0.595371,
+        "disease": "cancer"
+      }
+    ],
+    "genes": [
+      "FH",
+      "LINC01572",
+      "FOXP2",
+      "WAS"
+    ],
+    "mutation_type": [
+    ]
+  },
+  {
+    "title": "Npas1+-Nkx2.1+ Neurons Form A Unique Pallidal Neuron Subclass",
+    "authors": [
+      "Zachary A. Abecassis",
+      "Brianna L. Berceau",
+      "Phyo H. Win",
+      "Daniela Garcia",
+      "Harry S. Xenias",
+      "Qiaoling Cui",
+      "Arin Pamucku",
+      "Suraj Cherian",
+      "Vivian M. Hern\u00e1ndez",
+      "Uree Chon",
+      "Byung Kook Lim",
+      "Nicholas J. Justice",
+      "Raj Awatramani",
+      "Yongsoo Kim",
+      "Bryan M. Hooks",
+      "Charles R. Gerfen",
+      "Simina M. Boca",
+      "C. Savio Chan"
+    ],
+    "abstract": "Within the basal ganglia circuit, the GPe is critically involved in motor control. Aside from Foxp2+ neurons and ChAT+ neurons that have been established as unique neuron types, there is no consensus on the classification of GPe neurons. Properties of the remaining neuron types are poorly-defined. In this study, we leverage new mouse lines, viral tools, and molecular markers to study GPe neurons. By examining multiple modalities, we sought to better define GPe neuron subtypes. We found that Sox6 represents a novel, defining marker for GPe neuron subtypes. Lhx6+ neurons that lack the expression of Sox6 were devoid of both parvalbumin and Npas1. This result confirms previous assertions of the existence of a unique Lhx6+ population. Neurons that arise from the Dbx1+ lineage were similarly abundant in the GPe and displayed a heterogeneous makeup. Tracing experiments revealed that Npas1+-Nkx2.1+ neurons represent the principal, non-cholinergic, cortically-projecting neurons; they project profusely in the cortex and are part of a cortico-pallidal-cortical loop. Lastly, analysis of the spatial distribution and electrophysiological properties of a number of GPe neuron types further confirms the diversification of GPe subtypes. In summary, we provide improved descriptions of GPe neuron subtypes. By delineating different GPe neurons and their synaptic partners, our findings establish the circuit substrates that can be important for motor function and dysfunction. Our findings reconcile some of the discrepancies that arose from differences in techniques or the reliance on pre-existing tools.",
+    "url": "https://www.biorxiv.org/content/10.1101/644674v2",
+    "api": "BioArchive",
+    "date": "2019-05-21",
+    "date_seconds": 1558396800.0,
+    "species": [
+      "mouse"
+    ],
+    "diseases": [
+      {
+        "score": 0.835718,
+        "disease": "epilepsy"
+      },
+      {
+        "score": 0.565645,
+        "disease": "chronic pain"
+      }
+    ],
+    "genes": [
+    ],
+    "mutation_type": [
+    ]
+  },
+  {
+    "title": "Cortical Foxp2 supports behavioral flexibility and developmental dopamine D1 receptor expression",
+    "authors": [
+      "Marissa Co",
+      "Stephanie L. Hickey",
+      "Ashwinikumar Kulkarni",
+      "Matthew Harper",
+      "Genevieve Konopka"
+    ],
+    "abstract": "Genetic studies have associated FOXP2 variation with speech and language disorders and other neurodevelopmental disorders involving pathology of the cortex. In this brain region, FoxP2 is expressed from development into adulthood, but little is known about its downstream molecular and behavioral functions. Here, we characterized cortex-specific Foxp2 conditional knockout mice and found a major deficit in reversal learning, a form of behavioral flexibility. In contrast, they showed normal activity levels, anxiety, and vocalizations, save for a slight decrease in neonatal call loudness. These behavioral phenotypes were accompanied by decreased cortical dopamine D1 receptor (D1R) expression at neonatal and adult stages, while general cortical development remained unaffected. Finally, using single-cell transcriptomics, we identified at least five excitatory and three inhibitory D1R-expressing cell types in neonatal frontal cortex, and we found changes in D1R cell type composition and gene expression upon cortical Foxp2 deletion. Strikingly, these alterations included non-cell-autonomous changes in upper-layer neurons and interneurons. Together these data support a role for Foxp2 in the development of dopamine-modulated cortical circuits and behaviors relevant to neurodevelopmental disorders.",
+    "url": "https://www.biorxiv.org/content/10.1101/624973v2",
+    "api": "BioArchive",
+    "date": "2019-05-02",
+    "date_seconds": 1556755200.0,
+    "species": [
+      "mice"
+    ],
+    "diseases": [
+      {
+        "score": 0.917004,
+        "disease": "autism and pdd"
+      },
+      {
+        "score": 0.831017,
+        "disease": "epilepsy"
+      }
+    ],
+    "genes": [
+      "FOXP2"
+    ],
+    "mutation_type": [
+    ]
+  },
+  {
+    "title": "Analysis of genetically independent phenotypes identifies shared genetic factors associated with chronic musculoskeletal pain at different anatomic sites",
+    "authors": [
+      "Yakov A. Tsepilov",
+      "Maxim B. Freidin",
+      "Alexandra S. Shadrina",
+      "Sodbo Zh. Sharapov",
+      "Elizaveta E. Elgaeva",
+      "Jan van Zundert",
+      "Lennart C. Karssen",
+      "Pradeep Suri",
+      "Frances MK Williams",
+      "Yurii Aulchenko"
+    ],
+    "abstract": "Chronic musculoskeletal pain has a negative impact on all aspects of human life. Genetic studies of pain are complicated by the high complexity and heterogeneity of pain phenotypes. In this research, we aimed to reduce phenotype heterogeneity and reveal genes and pathways shared by chronic musculoskeletal pain at four locations: back, neck/shoulder, hip, and knee. Our study was based on the results of genome-wide association studies performed using UK Biobank data with a total sample size of 456,000 individuals. We applied principal component analysis based on the matrix of genetic covariances between the studied pain traits and constructed four genetically independent phenotypes (GIPs). The leading GIP (GIP1) explains the largest proportion of the genetic variance of and covariance between the analyzed phenotypes (78.4%), and the later GIPs (GIP2-4) explain progressively less. We identified and replicated five loci associated with GIP1 and one locus associated with GIP2. The genes decisively prioritized for the GIP1-associated loci were SLC39A8, ECM1, and FOXP2. For the remaining two GIP1-associated loci, we proposed several candidates (AMIGO3, BSN, RBM6, FAM212A, RNF123, UBA7 and MIR7114, NSMF, NOXA1, GRIN1), but were unable to prioritize any of them convincingly. The most likely causal gene in the locus associated with GIP2 was GDF5. For GIP1, gene set/tissue/cell type enrichment analyses identified multiple terms related to the nervous system. Genetic correlations analysis revealed a genetic overlap between GIP1 and osteoarthritis as well as a set of anthropometric (such as overweight and waist circumference), sociodemographic (such as age of first birth and college completion) and psychiatric/personality (such as depressive symptoms and neuroticism) traits. We suggest that GIP1 represents a biopsychological component of chronic musculoskeletal pain, related to physiological and psychological aspects and likely reflecting pain perception and processing.",
+    "url": "https://www.biorxiv.org/content/10.1101/810283v1",
+    "api": "BioArchive",
+    "date": "2019-10-18",
+    "date_seconds": 1571356800.0,
+    "species": [
+    ],
+    "diseases": [
+      {
+        "score": 0.830715,
+        "disease": "chronic pain"
+      },
+      {
+        "score": 0.690696,
+        "disease": "arthritis"
+      }
+    ],
+    "genes": [
+      "ECM1",
+      "GIP",
+      "GDF5",
+      "BSN",
+      "RNF123",
+      "AMIGO3",
+      "FAM212A",
+      "UBA7",
+      "RBM6",
+      "SLC39A8",
+      "FOXP2",
+      "GRIN1",
+      "NOXA1",
+      "NSMF",
+      "MIR7114"
+    ],
+    "mutation_type": [
+    ]
+  },
+  {
+    "title": "Functional genetic characterization by CRISPR-Cas9 of two enhancers of FOXP2 in a child with speech and language impairment",
+    "authors": [
+      "R. Torres-Ruiz",
+      "A. Benitez-Burraco",
+      "M. Mart\u00ednez-Lage",
+      "S. Rodr\u00edguez-Perales",
+      "P. Garc\u00eda-Bellido"
+    ],
+    "abstract": "Mutations in the coding region of FOXP2 are known to cause speech and language impairment. Microdeletions involving the region downstream the gene have been also associated to speech and cognitive deficits. We recently described a girl harbouring a complex chromosomal rearrangement with one breakpoint downstream the gene that might affect her speech and cognitive abilities via physical separation of distant regulatory DNA elements. In this study, we have used highly efficient targeted chromosomal deletions induced by the CRISPR/Cas9 genome editing tool to demonstrate the functionality of two enhancers, FOXP2-Eproximal and FOXP2-Edistal, located in the intergenic region between FOXP2 and its adjacent MDFIC gene. Deletion of any of these two functional enhancers in the neuroblastomic cell line SK-N-MC downregulates FOXP2 and decreases FOXP2 protein levels, conversely it upregulates MDFIC and increases MDFIC protein levels. This suggests that both regulatory elements may be shared between FOXP2 and MDFIC. We expect these findings contribute to a deeper understanding of how FOXP2 and MDFIC are regulated to pace neuronal development supporting speech and language.",
+    "url": "https://www.biorxiv.org/content/10.1101/064196v3",
+    "api": "BioArchive",
+    "date": "2016-07-15",
+    "date_seconds": 1468540800.0,
+    "species": [
+    ],
+    "diseases": [
+      {
+        "score": 0.707754,
+        "disease": "cancer"
+      },
+      {
+        "score": 0.63471,
+        "disease": "autism and pdd"
+      }
+    ],
+    "genes": [
+      "SPR",
+      "FOXP2",
+      "MDFIC"
+    ],
+    "mutation_type": [
+    ]
+  },
+  {
+    "title": "Genomic Influences on Self-Reported Childhood Maltreatment",
+    "authors": [
+      "Shareefa Dalvie",
+      "Adam X Maihofer",
+      "Jonathan R.I Coleman",
+      "Bekh Bradley",
+      "Gerome Breen",
+      "Leslie A Brick",
+      "Chia-Yen Chen",
+      "Karmel W. Choi",
+      "Laramie E Duncan",
+      "Guia Guffanti",
+      "Magali Haas",
+      "Supriya Harnal",
+      "Israel Liberzon",
+      "Nicole R Nugent",
+      "Allison C Provost",
+      "Kerry J. Ressler",
+      "Katy Torres",
+      "Ananda B Amstadter",
+      "S Bryn Austin",
+      "Dewleen G Baker",
+      "Elizabeth A Bolger",
+      "Richard A Bryant",
+      "Joseph R Calabrese",
+      "Douglas L Delahanty",
+      "Lindsay A. Farrer",
+      "Norah C Feeny",
+      "Janine D Flory",
+      "David Forbes",
+      "Sandro Galea",
+      "Aarti Gautam",
+      "Joel Gelernter",
+      "Rasha Hammamieh",
+      "Marti Jett",
+      "Angela G Junglen",
+      "Milissa L Kaufman",
+      "Ronald C Kessler",
+      "Alaptagin Khan",
+      "Henry R. Kranzler",
+      "Lauren A. M. Lebois",
+      "Charles Marmar",
+      "Matig R Mavissakalian",
+      "Alexander McFarlane",
+      "Meaghan O\u2019Donnell",
+      "Holly K Orcutt",
+      "Robert H Pietrzak",
+      "Victoria B Risbrough",
+      "Andrea L Roberts",
+      "Alex O Rothbaum",
+      "P. Roy-Byrne",
+      "Ken Ruggiero",
+      "Antonia V Seligowski",
+      "Christina M Sheerin",
+      "Derrick Silove",
+      "Jordan W Smoller",
+      "Nadia Solovieff",
+      "Murray B. Stein",
+      "Martin H Teicher",
+      "Robert J Ursano",
+      "Miranda Van Hooff",
+      "Sherry Winternitz",
+      "Jonathan D Wolff",
+      "Rachel Yehuda",
+      "Hongyu Zhao",
+      "Lori A Zoellner",
+      "Dan J. Stein",
+      "Karestan C Koenen",
+      "Caroline M Nievergelt"
+    ],
+    "abstract": "Childhood maltreatment is highly prevalent and serves as a risk factor for mental and physical disorders. Self-reported childhood maltreatment appears heritable, but the specific genetic influences on this phenotype are largely unknown. The aims of this study were to 1) identify genetic variation associated with reported childhood maltreatment, 2) calculate the relevant SNP\u2212based heritability estimates, and 3) quantify the genetic overlap of reported childhood maltreatment with mental and physical health\u2212related phenotypes. Genome-wide association analysis for childhood maltreatment was undertaken, using a discovery sample from the UK Biobank (UKBB) (n=124,000) and a replication sample from the Psychiatric Genomics Consortium\u2212posttraumatic stress disorder working group (PGC\u2212PTSD) (n=26,290). Heritability estimations for childhood maltreatment and genetic correlations with mental/physical health traits were calculated using linkage disequilibrium score regression (LDSR). Two genome\u2212wide significant loci associated with childhood maltreatment, located on chromosomes 3p13 (rs142346759, beta=0.015, p=4.35x10\u22128, FOXP1) and 7q31.1 (rs10262462, beta=\u22120.016, p=3.24x10\u22128, FOXP2), were identified in the discovery dataset but were not replicated in the PGC-PTSD sample. SNP-based heritability for childhood maltreatment was estimated to be ~6%. Childhood maltreatment was most significantly genetically correlated with depressive symptoms (rg=0.70, p=4.65x10\u221240). This is the first large-scale genetic study to identify specific variants associated with self\u2212reported childhood maltreatment. FOXP genes could influence traits such as depression and thereby be relevant to childhood maltreatment. Alternatively, these variants may be associated with a greater likelihood of reporting maltreatment. A clearer understanding of the genetic relationships of childhood maltreatment, including particular abuse subtypes, with various psychiatric disorders, may ultimately be useful in in developing targeted treatment and prevention strategies.",
+    "url": "https://www.biorxiv.org/content/10.1101/717314v1",
+    "api": "BioArchive",
+    "date": "2019-07-28",
+    "date_seconds": 1564272000.0,
+    "species": [
+    ],
+    "diseases": [
+    ],
+    "genes": [
+      "PTS",
+      "FOXP1",
+      "PGC",
+      "FOXP2"
+    ],
+    "mutation_type": [
+    ]
+  },
+  {
+    "title": "The promoter regions of intellectual disability-associated genes are uniquely enriched in LTR sequences of the MER41 primate-specific endogenous retrovirus: an evolutionary connection between immunity and cognition",
+    "authors": [
+      "Serge Nataf",
+      "Juan Uriagereka",
+      "Antonio Benitez-Burraco"
+    ],
+    "abstract": "Social behavior and neuronal connectivity in rodents have been shown to be shaped by the prototypical T lymphocyte-derived pro-inflammatory cytokine Interferon-gamma (IFNG). It has also been demonstrated that STAT1 (Signal Transducer And Activator Of Transcription 1), a transcription factor (TF) crucially involved in the IFNG pathway, binds consensus sequences that, in humans, are located with a high frequency in the LTRs (Long Terminal Repeats) of the MER41 family of primate-specific HERVs (Human Endogenous Retrovirus). However, the putative role of an IFNG/STAT1/MER41 pathway in human cognition and/or behavior is still poorly documented. Here, we present evidence that the promoter regions of intellectual disability-associated genes are uniquely enriched in LTR sequences of the MER41 HERVs. This observation is specific to MER41 among more than 130 HERVs examined. Moreover, we have not found such a significant enrichment in the promoter regions of genes that associate with autism spectrum disorder (ASD) or schizophrenia. Interestingly, ID-associated genes exhibit promoter-localized MER41 LTRs that harbor TF binding sites (TFBSs) for not only STAT1 but also other immune TFs such as, in particular, NFKB1 (Nuclear Factor Kappa B Subunit 1) and STAT3 (Signal Transducer And Activator Of Transcription 3). Moreover, IL-6 (Interleukin 6) rather than IFNG, is identified as the main candidate cytokine regulating such an immune/MER41/cognition pathway. Of note, functionally-relevant differences between humans and chimpanzees are observed regarding the 3 main components of this pathway: i) the protein sequences of immunes TFs binding MER41 LTRs, ii) the insertion sites of MER41 LTRs in the promoter regions of ID-associated genes and iii) the protein sequences of the targeted ID-associated genes. Finally, a survey of the human proteome has allowed us to map a protein-protein network which links the identified immune/MER41/cognition pathway to FOXP2 (Forkhead Box P2), a key TF involved in the emergence of human speech. Together, these results suggest that the stepped self-domestication of MER41 in the genomes of primates could have been a driver of cognitive evolution. Our data further indicate that non-inherited forms of ID might result from alterations of the immune/MER41/cognition pathway via notably an untimely or quantitatively inappropriate exposure of neurons to IL-6.",
+    "url": "https://www.biorxiv.org/content/10.1101/434209v2",
+    "api": "BioArchive",
+    "date": "2018-10-03",
+    "date_seconds": 1538524800.0,
+    "species": [
+      "rodent",
+      "primates"
+    ],
+    "diseases": [
+      {
+        "score": 0.913498,
+        "disease": "autism and pdd"
+      },
+      {
+        "score": 0.725627,
+        "disease": "cancer"
+      }
+    ],
+    "genes": [
+      "IFNG",
+      "STAT3",
+      "STAT1",
+      "TF",
+      "NFKB1",
+      "FOXP2"
+    ],
+    "mutation_type": [
+    ]
+  },
+  {
+    "title": "DRD2 and FOXP2 are implicated in the associations between computerized device use and psychiatric disorders",
+    "authors": [
+      "Frank R Wendt",
+      "Carolina Muniz Carvalho",
+      "Joel Gelernter",
+      "Renato Polimanti"
+    ],
+    "abstract": "The societal health effects of ubiquitous computerized device use (CDU) is mostly unknown. Epidemiological evidence supports associations between CDU and psychiatric traits, but the underlying biological mechanisms are unclear. We investigated genetic overlaps, causal relationships, and molecular pathways shared between these traits using genome-wide data regarding CDU (UK Biobank; up to N=361,194 individuals) and Psychiatric Genomics Consortium phenotypes (14,477<N<150,064). The strongest genetic correlations were between weekly usage of mobile phone in last 3 months (PhoneUse) vs. attention deficit hyperactivity disorder (ADHD) (rg=0.425, p=4.59x10-11) and plays computer games (CompGaming) vs. schizophrenia (SCZ) (rg=-0.271, p=7.16x10-26). Latent causal variable analysis did not support causal relationships between these traits, but the observed genetic overlap was related to shared molecular pathways, including: dopamine transport (Gene Ontology:0015872, pSCZvsCompGaming=2.74x10-10) and DRD2 association (pSCZ=7.94x10-8; pCompGaming=3.98x10-25), and FOXP2 association (pADHD=9.32x10-7; pPhoneUse=9.00x10-11). Our results support epidemiological observations with genetic data, and uncover biological mechanisms underlying psychiatric disorders contribution to CDUs.",
+    "url": "https://www.biorxiv.org/content/10.1101/497420v1",
+    "api": "BioArchive",
+    "date": "2018-12-17",
+    "date_seconds": 1545004800.0,
+    "species": [
+    ],
+    "diseases": [
+    ],
+    "genes": [
+      "DRD2",
+      "FOXP2"
+    ],
+    "mutation_type": [
+    ]
+  },
+  {
+    "title": "Mice carrying a humanized Foxp2 knock-in allele show region-specific shifts of striatal Foxp2 expression levels",
+    "authors": [
+      "C Schreiweis",
+      "T Irinopoulou",
+      "B Vieth",
+      "L Laddada",
+      "F Oury",
+      "E Burgui\u00e8re",
+      "W Enard",
+      "M Groszer"
+    ],
+    "abstract": "Genetic and clinical studies of speech and language disorders are providing starting points to unravel underlying neurobiological mechanisms. The gene encoding the transcription factor FOXP2 has been the first example of a gene involved in the development and evolution of this human-specific trait. A number of autosomal-dominant FOXP2 mutations are associated with developmental speech and language deficits indicating that gene dosage plays an important role in the disorder. Comparative genomics studies suggest that two human-specific amino acid substitutions in FOXP2 might have been positively selected during human evolution. A knock-in mouse model carrying these two amino acid changes in the endogenous mouse Foxp2 gene (Foxp2hum/hum) shows profound changes in striatum-dependent behaviour and neurophysiology, supporting a functional role for these changes. However, how this affects Foxp2 expression patterns in different striatal regions and compartments has not been assessed. Here, we characterized Foxp2 protein expression patterns in adult striatal tissue in Foxp2hum/hum mice. Consistent with prior reports in wildtype mice, we find that striatal neurons in Foxp2hum/hum mice and wildtype littermates express Foxp2 in a range from low to high levels. However, we observe a shift towards more cells with higher Foxp2 expression levels in Foxp2hum/hum mice, significantly depending on the striatal region and the compartment. As potential behavioural readout of these shifts in Foxp2 levels across striatal neurons, we employed a morphine sensitization assay. While we did not detect differences in morphine-induced hyperlocomotion during acute treatment, there was an attenuated hyperlocomotion plateau during sensitization in Foxp2hum/hum mice. Taken together, these results suggest that the humanized Foxp2 allele in a mouse background is associated with a shift in striatal Foxp2 protein expression pattern.",
+    "url": "https://www.biorxiv.org/content/10.1101/514893v1",
+    "api": "BioArchive",
+    "date": "2019-01-09",
+    "date_seconds": 1546992000.0,
+    "species": [
+      "mouse",
+      "mice"
+    ],
+    "diseases": [
+      {
+        "score": 0.731213,
+        "disease": "cancer"
+      }
+    ],
+    "genes": [
+      "FOXP2"
+    ],
+    "mutation_type": [
+    ]
+  }
+]
