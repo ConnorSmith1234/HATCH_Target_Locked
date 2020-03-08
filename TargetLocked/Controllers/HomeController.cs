@@ -26,7 +26,7 @@ namespace TargetLocked.Controllers
         [HttpPost]
         public IActionResult Search([FromBody]UserQuery query)
         {
-            return Json(QueryResponse.sampleResponse());
+            return Json(new List<QueryResponse>() { QueryResponse.sampleResponse()});
         }
 
         public IActionResult Privacy()
