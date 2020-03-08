@@ -49,10 +49,13 @@ $(function () {
     list = $("#responseList").dxList({
         dataSource: searchData,
         visible: false,
+        focusStateEnabled: false,
+        activeStateEnabled: false,
         height: "100%",
         width: "100%",
         itemTemplate: function (data, index) {
-            let titleString = $("<div>").addClass("titleLink").html(data.title);
+            let url = data.url.indexOf("http") != 0 ? "https://" + data.url : data.url;
+            let titleString = $("<a>").addClass("titleLink").html(data.title).attr("href", url).attr("target", "_blank");
             let authorsList = $("<div>").addClass("authors").html(data.authors.join(", "));
             let synopsis;
             if (data.abstract.length > 260) {
@@ -82,10 +85,9 @@ function sendSearch() {
             list.reload();
             list.option("visible", true);
             displaySidebar();
-            console.log("success");
         },
         error: function () {
-            console.log("error");
+            console.log("boneless");
         }
     });
 }
@@ -134,17 +136,19 @@ function displaySidebar() {
         let speciesList = searchData.map(a => a.species)[0];
         $("#speciesFilter").dxList({
             items: speciesList,
+            selectedItems: speciesList,
             selectionMode: "all",
             showSelectionControls: true
         });
         let diseaseList = searchData.map(a => a.diseases)[0];
         $("#diseaseFilter").dxList({
             items: diseaseList,
+            selectedItems: diseaseList,
             selectionMode: "all",
-            showSelectionControls: true
-        })
+            showSelectionControls: true,
+        });
+        handleCollapse();
         $("#filterSidebar").addClass("active");
-        console.log(dateList);
     }
 }
 
@@ -156,6 +160,7 @@ function setupDates(start, end) {
     afterDatePicker = $("#afterDate").dxDateBox({
         type: "date",
         placeholder: "Start",
+        value: startDate,
         min: startDate,
         max: endDate
     }).dxDateBox("instance");
@@ -163,7 +168,23 @@ function setupDates(start, end) {
         type: "date",
         placeholder: "End",
         visible: false,
+        value: endDate,
         min: startDate,
         max: endDate
     }).dxDateBox("instance");
+}
+
+function handleCollapse() {
+    $(".collapseIcon").click(function () {
+        if ($(this).hasClass("dx-icon-chevronup")) {
+            let thisString = $(this).attr("id").substring(0, $(this).attr("id").indexOf("Collapse"));
+            $("#" + thisString + "Filter").dxList("instance").option("visible", false);
+            $(this).removeClass("dx-icon-chevronup").addClass("dx-icon-chevrondown");
+        }
+        else {
+            let thisString = $(this).attr("id").substring(0, $(this).attr("id").indexOf("Collapse"));
+            $("#" + thisString + "Filter").dxList("instance").option("visible", true);
+            $(this).removeClass("dx-icon-chevrondown").addClass("dx-icon-chevronup");
+        }
+    });
 }

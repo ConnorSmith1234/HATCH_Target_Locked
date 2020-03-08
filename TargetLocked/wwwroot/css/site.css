@@ -81,6 +81,7 @@ body {
 }
 
     .titleLink:hover {
+        cursor: pointer;
         text-decoration: underline;
     }
 
@@ -118,5 +119,18 @@ body {
 }
 
 .collapseIcon {
-    font-size: 18px;
+    font-size: 20px;
+}
+
+.collapseIcon:hover {
+    cursor: pointer;
+}
+
+.collapsed {
+    height: 0;
+    transition: 0.5s height;
+}
+
+.dx-list-item {
+    cursor: default;
 }

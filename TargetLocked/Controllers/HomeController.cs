@@ -40,23 +40,24 @@ namespace TargetLocked.Controllers
         [HttpPost]
         public IActionResult Search([FromBody]UserQuery query)
         {
-            ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = Path.Combine(_pythonLocation, "python.exe");
-            start.Arguments = string.Format("\"" + Path.Combine(Directory.GetCurrentDirectory(), "query.py") +  "\" {0}\"", query.QueryString);
-            start.UseShellExecute = false;
-            start.CreateNoWindow = true;
-            start.RedirectStandardOutput = true;
-            start.RedirectStandardError = true;
-            using (Process process = Process.Start(start))
-            {
-                using (StreamReader reader = process.StandardOutput)
-                {
-                    string stderr = process.StandardError.ReadToEnd();
-                    string result = reader.ReadToEnd();
-                    Debug.WriteLine(result);
-                    return Json(result);
-                }
-            }
+            //ProcessStartInfo start = new ProcessStartInfo();
+            //start.FileName = Path.Combine(_pythonLocation, "python.exe");
+            //start.Arguments = string.Format("\"" + Path.Combine(Directory.GetCurrentDirectory(), "query.py") +  "\" {0}\"", query.QueryString);
+            //start.UseShellExecute = false;
+            //start.CreateNoWindow = true;
+            //start.RedirectStandardOutput = true;
+            //start.RedirectStandardError = true;
+            //using (Process process = Process.Start(start))
+            //{
+            //    using (StreamReader reader = process.StandardOutput)
+            //    {
+            //        string stderr = process.StandardError.ReadToEnd();
+            //        string result = reader.ReadToEnd();
+            //        Debug.WriteLine(result);
+            //        return Json(result);
+            //    }
+            //}
+            return Json(new List<QueryResponse>() { QueryResponse.sampleResponse() });
         }
 
         public IActionResult Privacy()

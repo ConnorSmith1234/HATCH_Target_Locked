@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TargetLocked</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>    <!-- DevExtreme themes -->
     <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/19.2.6/css/dx.common.css">
     <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/19.2.6/css/dx.light.css">
+    <link rel="stylesheet" href="~/css/site.css" />
 
     <!-- DevExtreme library -->
     <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/19.2.6/js/dx.all.js"></script>
@@ -49,7 +49,7 @@
                 <div class="my-4">
                     <div class="d-flex">
                         <h3>Diseases</h3>
-                        <i class="dx-icon-chevronup ml-auto collapseIcon" data-toggle="collapse" data-target="#diseaseFilter" aria-expanded="true" aria-controls="diseaseFilter"></i>
+                        <i id="diseaseCollapse" class="dx-icon-chevronup ml-auto mt-2 collapseIcon"></i>
                     </div>
                     <div id="diseaseFilter"></div>
                 </div>
@@ -64,7 +64,10 @@
                     </div>
                 </div>
                 <div class="my-4">
-                    <h3>Species</h3>
+                    <div class="d-flex">
+                        <h3>Species</h3>
+                        <i id="speciesCollapse" class="dx-icon-chevronup ml-auto mt-2 collapseIcon"></i>
+                    </div>
                     <div id="speciesFilter"></div>
                 </div>
                 <div class="my-4">
