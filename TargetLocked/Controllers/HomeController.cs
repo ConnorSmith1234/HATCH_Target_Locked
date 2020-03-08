@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using TargetLocked.DB;
 using TargetLocked.Models;
 
@@ -40,6 +42,9 @@ namespace TargetLocked.Controllers
         [HttpPost]
         public IActionResult Search([FromBody]UserQuery query)
         {
+            string directory = Path.Combine(Directory.GetCurrentDirectory(), "SampleData", "search_results1.json");
+            var myJSONString = System.IO.File.ReadAllText(directory);
+            List<QueryResponse> queryResponse = JsonConvert.DeserializeObject<List<QueryResponse>>(myJSONString);
             //ProcessStartInfo start = new ProcessStartInfo();
             //start.FileName = Path.Combine(_pythonLocation, "python.exe");
             //start.Arguments = string.Format("\"" + Path.Combine(Directory.GetCurrentDirectory(), "query.py") +  "\" {0}\"", query.QueryString);
@@ -57,7 +62,7 @@ namespace TargetLocked.Controllers
             //        return Json(result);
             //    }
             //}
-            return Json(QueryResponse.sampleResponse() );
+            return Json(queryResponse );
         }
 
         public IActionResult Privacy()

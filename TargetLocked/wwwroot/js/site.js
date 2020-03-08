@@ -4,11 +4,11 @@
 // Write your JavaScript code.
 
 let urlLookup = [{
-    "siteName": "BioMed",
-    "URL": "https://www.samplewebsite.com",
+    "siteName": "MedArchive",
+    "URL": "https://www.medrxiv.org/",
 }, {
-    "siteName": "PubMed",
-    "URL": "https://www.sampleweb.com"
+    "siteName": "BioArchive",
+    "URL": "https://www.biorxiv.org/"
 }];
 
 let list, searchBox;
@@ -23,20 +23,6 @@ let beforeDatePicker, afterDatePicker;
 $(function () {
     searchBox = $("#searchBox").dxAutocomplete({
         dataSource: [
-            "HD Video Player",
-            "SuperHD Video Player",
-            "SuperPlasma 50",
-            "SuperLED 50",
-            "SuperLED 42",
-            "SuperLCD 55",
-            "SuperLCD 42",
-            "SuperPlasma 65",
-            "SuperLCD 70",
-            "Projector Plus",
-            "Projector PlusHT",
-            "ExcelRemote IR",
-            "ExcelRemote BT",
-            "ExcelRemote IP"
         ],
         width: "100%",
         minSearchLength: 3,
@@ -66,7 +52,7 @@ $(function () {
             let titleString = $("<a>").addClass("titleLink").addClass("w-auto").html(data.title).attr("href", url).attr("target", "_blank");
             let apiSite = $("<a>").addClass("api").html("Source: " + data.api).attr("href", urlLookup.filter(x => x.siteName == data.api)[0].URL).attr("target", "_blank");
             let titleDiv = $("<div>").addClass("d-flex").append(titleString).append(apiSite);
-            let authorsList = $("<div>").addClass("authors").html(data.authors.join(", "));
+            let authorsList = $("<div>").addClass("authors").html(data.authors ? (data.authors.length > 4 ? data.authors.slice(0, 4).join(", ") + ", et al." : data.authors.join(", ")) : "No authors found");
             let synopsis;
             if (data.abstract.length > 260) {
                 synopsis = data.abstract.substring(0, 260) + " ...";
@@ -104,7 +90,7 @@ function sendSearch() {
 function displaySidebar() {
     if (firstSearchFlag) {
         firstSearchFlag = false;
-        let dateList = searchData.map(a => a.date);
+        let dateList = searchData.map(a => a.date_seconds);
         earliestDate = Math.min(...dateList);
         latestDate = Math.max(...dateList);
         setupDates(earliestDate, latestDate);
@@ -133,6 +119,9 @@ function displaySidebar() {
         let authorsList = searchData.map(a => a.authors).join().split(",");
         let authorsCount = [];
         authorsList.forEach(function (i) {
+            if (i.length == 0) {
+                return true;
+            }
             if (authorsCount.some(x => x.Name == i)) {
                 authorsCount.filter(x => x.Name == i)[0].Count++;
             }
@@ -156,6 +145,9 @@ function displaySidebar() {
         let speciesList = searchData.map(a => a.species).join().split(",");
         let speciesCount = [];
         speciesList.forEach(function (i) {
+            if (i.length == 0) {
+                return true;
+            }
             if (speciesCount.some(x => x.Name == i)) {
                 speciesCount.filter(x => x.Name == i)[0].Count++;
             }
@@ -176,9 +168,17 @@ function displaySidebar() {
             selectionMode: "all",
             showSelectionControls: true
         });
-        let diseaseList = searchData.map(a => a.diseases).join().split(",");
+        let diseaseList = searchData.map(a => a.diseases);
         let diseaseCount = [];
+        let masterDiseaseList = [];
         diseaseList.forEach(function (i) {
+            masterDiseaseList.push(i.map(x => x.disease));
+        });
+        masterDiseaseList = [].concat.apply([], masterDiseaseList);
+        masterDiseaseList.forEach(function (i) {
+            if (i.length == 0) {
+                return true;
+            }
             if (diseaseCount.some(x => x.Name == i)) {
                 diseaseCount.filter(x => x.Name == i)[0].Count++;
             }
@@ -205,10 +205,8 @@ function displaySidebar() {
 }
 
 function setupDates(start, end) {
-    let startDate = new Date(1970, 0, 1);
-    startDate.setSeconds(startDate.getSeconds() + start);
-    let endDate = new Date(1970, 0, 1);
-    endDate.setSeconds(endDate.getSeconds() + end);
+    let startDate = new Date(start);
+    let endDate = new Date(end);
     afterDatePicker = $("#afterDate").dxDateBox({
         type: "date",
         placeholder: "Start",
@@ -257,7 +255,12 @@ function handleFilterChange() {
     let dateDropdownSelection = $("#dateDropdownButton").dxSelectBox("instance").option().value;
     let filteredData = speciesSelection.length != 0 ? searchData.filter(x => x.species.some(y => speciesSelection.includes(y))) : searchData;
     filteredData = diseaseSelection.length != 0 ? filteredData.filter(x => x.diseases.some(y => diseaseSelection.includes(y))) : filteredData;
-    filteredData = authorsSelection.length != 0 ? filteredData.filter(x => x.authors.some(y => authorsSelection.includes(y))) : filteredData;
+    filteredData = authorsSelection.length != 0 ? filteredData.filter(function (x) {
+        if (!x.authors) {
+            return false;
+        }
+        return x.authors.some(y => authorsSelection.includes(y))
+    }) : filteredData;
     filteredData = filteredData.filter(function (x) {
         let thisDate = new Date(x.date * 1000);
         if (thisDate > beforeSelection && (dateDropdownSelection == "Before" || dateDropdownSelection == "Between")) {
