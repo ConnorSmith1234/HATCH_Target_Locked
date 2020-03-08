@@ -32,9 +32,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -48,13 +45,13 @@
             <div id="filterSidebar">
                 <div class="my-4">
                     <div class="d-flex">
-                        <h3>Diseases</h3>
+                        <h4>Diseases</h4>
                         <i id="diseaseCollapse" class="dx-icon-chevronup ml-auto mt-2 collapseIcon"></i>
                     </div>
                     <div id="diseaseFilter"></div>
                 </div>
                 <div class="my-4">
-                    <h3>Publication Date</h3>
+                    <h4>Publication Date</h4>
                     <div class="d-flex">
                         <div id="dateDropdownButton"></div>
                         <div>
@@ -65,14 +62,17 @@
                 </div>
                 <div class="my-4">
                     <div class="d-flex">
-                        <h3>Species</h3>
+                        <h4>Species</h4>
                         <i id="speciesCollapse" class="dx-icon-chevronup ml-auto mt-2 collapseIcon"></i>
                     </div>
                     <div id="speciesFilter"></div>
                 </div>
                 <div class="my-4">
-                    <h3>Citations</h3>
-                    <div id="citationFilter"></div>
+                    <div class="d-flex">
+                        <h4>Authors</h4>
+                        <i id="authorsCollapse" class="dx-icon-chevronup ml-auto mt-2 collapseIcon"></i>
+                    </div>
+                    <div id="authorsFilter"></div>
                 </div>
             </div>
             <div class="container">
@@ -86,13 +86,7 @@
             </div>
         </div>
     </main>
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - TargetLocked - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/SampleData.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>

@@ -78,6 +78,7 @@ body {
 .titleLink {
     font-size: 22px;
     color: blue;
+    margin-right: 15px;
 }
 
     .titleLink:hover {
@@ -102,7 +103,7 @@ body {
     width: 250px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
-    top: 55px; /* Stay at the top */
+    top: 35px; /* Stay at the top */
     left: -250px;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
@@ -133,4 +134,9 @@ body {
 
 .dx-list-item {
     cursor: default;
+}
+
+.api {
+    text-align: right;
+    margin-left: auto;
 }

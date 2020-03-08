@@ -57,7 +57,7 @@ namespace TargetLocked.Controllers
             //        return Json(result);
             //    }
             //}
-            return Json(new List<QueryResponse>() { QueryResponse.sampleResponse() });
+            return Json(QueryResponse.sampleResponse() );
         }
 
         public IActionResult Privacy()

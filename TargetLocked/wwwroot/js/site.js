@@ -3,6 +3,14 @@
 
 // Write your JavaScript code.
 
+let urlLookup = [{
+    "siteName": "BioMed",
+    "URL": "https://www.samplewebsite.com",
+}, {
+    "siteName": "PubMed",
+    "URL": "https://www.sampleweb.com"
+}];
+
 let list, searchBox;
 let firstSearchFlag = true;
 let searchData = [];
@@ -55,7 +63,9 @@ $(function () {
         width: "100%",
         itemTemplate: function (data, index) {
             let url = data.url.indexOf("http") != 0 ? "https://" + data.url : data.url;
-            let titleString = $("<a>").addClass("titleLink").html(data.title).attr("href", url).attr("target", "_blank");
+            let titleString = $("<a>").addClass("titleLink").addClass("w-auto").html(data.title).attr("href", url).attr("target", "_blank");
+            let apiSite = $("<a>").addClass("api").html("Source: " + data.api).attr("href", urlLookup.filter(x => x.siteName == data.api)[0].URL).attr("target", "_blank");
+            let titleDiv = $("<div>").addClass("d-flex").append(titleString).append(apiSite);
             let authorsList = $("<div>").addClass("authors").html(data.authors.join(", "));
             let synopsis;
             if (data.abstract.length > 260) {
@@ -64,9 +74,8 @@ $(function () {
                 synopsis = data.abstract;
             }
             let summary = $("<div>").addClass("abstract").html(synopsis);
-            let citedBy = $("<div>").addClass("citations").html("Citations: 1000"); //+ data.)
             console.log(data);
-            return $("<div>").addClass("container-fluid").append(titleString).append(authorsList).append(summary).append(citedBy);
+            return $("<div>").addClass("container-fluid").append(titleDiv).append(authorsList).append(summary);
         }
     }).dxList("instance");
 });
@@ -106,44 +115,87 @@ function displaySidebar() {
             onValueChanged: function (e) {
                 if (e.value == "Before") {
                     beforeDatePicker.option("visible", true);
+                    beforeDatePicker.option("value", afterDatePicker.option("value"));
                     afterDatePicker.option("visible", false);
                 }
                 else if (e.value == "After") {
                     beforeDatePicker.option("visible", false);
                     afterDatePicker.option("visible", true);
+                    afterDatePicker.option("value", beforeDatePicker.option("value"));
                 }
                 else {
                     beforeDatePicker.option("visible", true);
                     afterDatePicker.option("visible", true);
                 }
+                handleFilterChange();
             }
         });
-        let citationList = [100, 1000];
-        $("#citationFilter").dxRangeSlider({
-            min: Math.min(...citationList),
-            max: Math.max(...citationList),
-            start: Math.min(...citationList),
-            end: Math.max(...citationList),
-            tooltip: {
-                enabled: true,
-                format: function (value) {
-                    return value;
-                },
-                showMode: "always",
-                position: "bottom"
+        let authorsList = searchData.map(a => a.authors).join().split(",");
+        let authorsCount = [];
+        authorsList.forEach(function (i) {
+            if (authorsCount.some(x => x.Name == i)) {
+                authorsCount.filter(x => x.Name == i)[0].Count++;
+            }
+            else {
+                authorsCount.push({ "Name": i, "Count": 1 });
             }
         });
-        let speciesList = searchData.map(a => a.species)[0];
-        $("#speciesFilter").dxList({
-            items: speciesList,
-            selectedItems: speciesList,
+        let authorsHeight = authorsCount.length > 3 ? 185 : null;
+        $("#authorsFilter").dxList({
+            items: authorsCount,
+            height: authorsHeight,
+            itemTemplate: function (data) {
+                return $("<div>").html(data.Name + " (" + data.Count + ")");
+            },
+            onSelectionChanged: function () {
+                handleFilterChange();
+            },
             selectionMode: "all",
             showSelectionControls: true
         });
-        let diseaseList = searchData.map(a => a.diseases)[0];
+        let speciesList = searchData.map(a => a.species).join().split(",");
+        let speciesCount = [];
+        speciesList.forEach(function (i) {
+            if (speciesCount.some(x => x.Name == i)) {
+                speciesCount.filter(x => x.Name == i)[0].Count++;
+            }
+            else {
+                speciesCount.push({ "Name": i, "Count": 1 });
+            }
+        });
+        let speciesHeight = speciesCount.length > 3 ? 185 : null;
+        $("#speciesFilter").dxList({
+            items: speciesCount,
+            height: speciesHeight,
+            itemTemplate: function (data) {
+                return $("<div>").html(data.Name + " (" + data.Count + ")");
+            },
+            onSelectionChanged: function () {
+                handleFilterChange();
+            },
+            selectionMode: "all",
+            showSelectionControls: true
+        });
+        let diseaseList = searchData.map(a => a.diseases).join().split(",");
+        let diseaseCount = [];
+        diseaseList.forEach(function (i) {
+            if (diseaseCount.some(x => x.Name == i)) {
+                diseaseCount.filter(x => x.Name == i)[0].Count++;
+            }
+            else {
+                diseaseCount.push({ "Name": i, "Count": 1 });
+            }
+        });
+        let diseaseHeight = diseaseCount.length > 3 ? 185 : null;
         $("#diseaseFilter").dxList({
-            items: diseaseList,
-            selectedItems: diseaseList,
+            items: diseaseCount,
+            height: diseaseHeight,
+            itemTemplate: function (data) {
+                return $("<div>").html(data.Name + " (" + data.Count + ")");
+            },
+            onSelectionChanged: function () {
+                handleFilterChange();
+            },
             selectionMode: "all",
             showSelectionControls: true,
         });
@@ -162,7 +214,10 @@ function setupDates(start, end) {
         placeholder: "Start",
         value: startDate,
         min: startDate,
-        max: endDate
+        max: endDate,
+        onValueChanged: function () {
+            handleFilterChange();
+        }
     }).dxDateBox("instance");
     beforeDatePicker = $("#beforeDate").dxDateBox({
         type: "date",
@@ -170,7 +225,10 @@ function setupDates(start, end) {
         visible: false,
         value: endDate,
         min: startDate,
-        max: endDate
+        max: endDate,
+        onValueChanged: function () {
+            handleFilterChange();
+        }
     }).dxDateBox("instance");
 }
 
@@ -187,4 +245,30 @@ function handleCollapse() {
             $(this).removeClass("dx-icon-chevrondown").addClass("dx-icon-chevronup");
         }
     });
+}
+
+function handleFilterChange() {
+    let authorsSelection = $("#authorsFilter").dxList("instance").option("selectedItems").map(x => x.Name);
+    let speciesSelection = $("#speciesFilter").dxList("instance").option("selectedItems").map(x => x.Name);
+    let diseaseSelection = $("#diseaseFilter").dxList("instance").option("selectedItems").map(x => x.Name);
+    let beforeSelection = new Date(new Date($("#beforeDate").dxDateBox("instance").option().value).toDateString());
+    let afterSelection = new Date(new Date($("#afterDate").dxDateBox("instance").option().value).toDateString());
+    beforeSelection = new Date(beforeSelection.getTime() + (60 * 60 * 24 * 1000));
+    let dateDropdownSelection = $("#dateDropdownButton").dxSelectBox("instance").option().value;
+    let filteredData = speciesSelection.length != 0 ? searchData.filter(x => x.species.some(y => speciesSelection.includes(y))) : searchData;
+    filteredData = diseaseSelection.length != 0 ? filteredData.filter(x => x.diseases.some(y => diseaseSelection.includes(y))) : filteredData;
+    filteredData = authorsSelection.length != 0 ? filteredData.filter(x => x.authors.some(y => authorsSelection.includes(y))) : filteredData;
+    filteredData = filteredData.filter(function (x) {
+        let thisDate = new Date(x.date * 1000);
+        if (thisDate > beforeSelection && (dateDropdownSelection == "Before" || dateDropdownSelection == "Between")) {
+            return false;
+        }
+        if (thisDate < afterSelection && (dateDropdownSelection == "After" || dateDropdownSelection == "Between")) {
+            return false;
+        }
+        return true;
+    })
+    list.option("dataSource", filteredData);
+    list.reload();
+
 }
