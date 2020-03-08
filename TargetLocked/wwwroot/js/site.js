@@ -4,10 +4,16 @@
 // Write your JavaScript code.
 
 let list, searchBox;
+let firstSearchFlag = true;
 let searchData = [];
+let speciesParams = [], diseaseParams = [];
+let minCitation, maxCitation;
+let earliestDate, latestDate;
+
+let beforeDatePicker, afterDatePicker;
 
 $(function () {
-    searchBox = $("#searchBox").dxSelectBox({
+    searchBox = $("#searchBox").dxAutocomplete({
         dataSource: [
             "HD Video Player",
             "SuperHD Video Player",
@@ -25,17 +31,14 @@ $(function () {
             "ExcelRemote IP"
         ],
         width: "100%",
-        displayExpr: null,
-        searchEnabled: true,
-        showDropDownButton: false,
         minSearchLength: 3,
-        acceptCustomValue: true,
+        placeholder: "Search...",
         onKeyDown: function (e) {
             if (e.event.key == "Enter") {
                 sendSearch();
             }
         }
-    }).dxSelectBox("instance");
+    }).dxAutocomplete("instance");
     $("#searchIcon").dxButton({
         icon: "search",
         text: "Search",
@@ -78,10 +81,89 @@ function sendSearch() {
             list.option("dataSource", searchData);
             list.reload();
             list.option("visible", true);
+            displaySidebar();
             console.log("success");
         },
         error: function () {
             console.log("error");
         }
     });
+}
+
+function displaySidebar() {
+    if (firstSearchFlag) {
+        firstSearchFlag = false;
+        let dateList = searchData.map(a => a.date);
+        earliestDate = Math.min(...dateList);
+        latestDate = Math.max(...dateList);
+        setupDates(earliestDate, latestDate);
+        $("#dateDropdownButton").dxSelectBox({
+            height: 36,
+            items: ["Before", "After", "Between"],
+            value: "After",
+            onValueChanged: function (e) {
+                if (e.value == "Before") {
+                    beforeDatePicker.option("visible", true);
+                    afterDatePicker.option("visible", false);
+                }
+                else if (e.value == "After") {
+                    beforeDatePicker.option("visible", false);
+                    afterDatePicker.option("visible", true);
+                }
+                else {
+                    beforeDatePicker.option("visible", true);
+                    afterDatePicker.option("visible", true);
+                }
+            }
+        });
+        let citationList = [100, 1000];
+        $("#citationFilter").dxRangeSlider({
+            min: Math.min(...citationList),
+            max: Math.max(...citationList),
+            start: Math.min(...citationList),
+            end: Math.max(...citationList),
+            tooltip: {
+                enabled: true,
+                format: function (value) {
+                    return value;
+                },
+                showMode: "always",
+                position: "bottom"
+            }
+        });
+        let speciesList = searchData.map(a => a.species)[0];
+        $("#speciesFilter").dxList({
+            items: speciesList,
+            selectionMode: "all",
+            showSelectionControls: true
+        });
+        let diseaseList = searchData.map(a => a.diseases)[0];
+        $("#diseaseFilter").dxList({
+            items: diseaseList,
+            selectionMode: "all",
+            showSelectionControls: true
+        })
+        $("#filterSidebar").addClass("active");
+        console.log(dateList);
+    }
+}
+
+function setupDates(start, end) {
+    let startDate = new Date(1970, 0, 1);
+    startDate.setSeconds(startDate.getSeconds() + start);
+    let endDate = new Date(1970, 0, 1);
+    endDate.setSeconds(endDate.getSeconds() + end);
+    afterDatePicker = $("#afterDate").dxDateBox({
+        type: "date",
+        placeholder: "Start",
+        min: startDate,
+        max: endDate
+    }).dxDateBox("instance");
+    beforeDatePicker = $("#beforeDate").dxDateBox({
+        type: "date",
+        placeholder: "End",
+        visible: false,
+        min: startDate,
+        max: endDate
+    }).dxDateBox("instance");
 }

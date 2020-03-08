@@ -48,7 +48,6 @@ C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netco
 C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
-C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\TargetLocked.RazorTargetAssemblyInfo.cache
 C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\TargetLocked.RazorTargetAssemblyInfo.cs
 C:\Users\vtswa\Documents\GitHub\HATCH_Target_Locked\TargetLocked\obj\Debug\netcoreapp3.1\TargetLocked.Views.pdb
