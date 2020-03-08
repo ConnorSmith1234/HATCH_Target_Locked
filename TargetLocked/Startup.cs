@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TargetLocked.DB;
 
 namespace TargetLocked
 {
@@ -16,6 +18,12 @@ namespace TargetLocked
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            using (var db = new DatabaseContext())
+            {
+                db.Database.EnsureCreated();
+                db.Database.Migrate();
+            }
         }
 
         public IConfiguration Configuration { get; }
@@ -24,6 +32,8 @@ namespace TargetLocked
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddEntityFrameworkSqlite().AddDbContext<DatabaseContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
